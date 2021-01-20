@@ -1,13 +1,20 @@
-//--->> API`mizi res.Json() objesi sekline ceviricez res.send() ifadesinden kurtulucaz
-const getAllQuestions = (req,res,next) =>{
-   
-    res
-    .status(200)
-    .json({
-        success : true
-    })
-}
+const express = require("express");
+
+const router = express.Router();
+
+router.get("/", (req, res) => {
+  console.log("/api/question page");
+});
+router.get("/question", (req, res) => {
+  console.log("/api/question/delete page");
+});
+
+const getAllQuestions = (req, res, next) => {
+  res.status(200).json({
+    success: true,
+  });
+};
 
 module.exports = {
-    getAllQuestions
-}
+  getAllQuestions,
+};
