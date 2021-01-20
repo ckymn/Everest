@@ -5,10 +5,10 @@ const { getAccessToRoute } = require("../middlewares/authorization/auth");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  console.log("/api/auth page");
+  res.send("api/auth");
 });
 router.get("/register", (req, res) => {
-  console.log("/api/auth/register page");
+  res.send("/api/auth/register page");
 });
 
 // api/auth/register (postman da aratma)
