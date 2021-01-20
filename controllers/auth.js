@@ -18,7 +18,7 @@ const register = asyncErrorWrapper(async (req, res, next) => {
   sendJwtToClient(user, res); //jsonwebtoken kullanimi
 });
 
-const getUser = (req, res, next) => {
+const authGet = (req, res, next) => {
   res.json({
     success: true,
     data: {
@@ -30,5 +30,5 @@ const getUser = (req, res, next) => {
 
 module.exports = {
   register,
-  getUser,
+  authGet,
 };

@@ -1,5 +1,5 @@
 const express = require("express");
-const { register, getUser } = require("../controllers/auth");
+const { register, authGet } = require("../controllers/auth");
 const { getAccessToRoute } = require("../middlewares/authorization/auth");
 
 const router = express.Router();
@@ -14,6 +14,6 @@ router.get("/register", (req, res) => {
 // api/auth/register (postman da aratma)
 router.post("/register", register);
 // JWT cagirma islemi
-router.get("/profile", getAccessToRoute, getUser); //getAccessToRoute burda middleware gorevi goruyor
+router.get("/profile", getAccessToRoute, authGet); //getAccessToRoute burda middleware gorevi goruyor
 
 module.exports = router;
